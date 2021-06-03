@@ -1,13 +1,3 @@
-const COLORS = [
-    "red",
-    "green",
-    "blue",
-    "purple",
-    "yellow",
-    "teal"
-];
-
-
 function createTextArea() {
     const textarea = document.createElement("textarea");
     textarea.style.display = "block";
@@ -27,8 +17,6 @@ function createList() {
     list.style.marginTop = "1rem";
     return list;
 }
-
-// rack upp handen nar ni har marginal
 
 function createLi(text, color) {
     const li = document.createElement("li");
