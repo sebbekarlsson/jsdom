@@ -12,15 +12,34 @@ function createButton(text) {
     return button;
 }
 
+const ulStyle = `
+    list-style: none;
+    margin-top: 1rem;
+`;
+
+// rack upp handen nar ni lyckats fa bort 
+// punkterna
+
 function createList() {
     const list = document.createElement("ul");
-    list.style.marginTop = "1rem";
+    list.style = ulStyle;
     return list;
+}
+
+// rack upp handen nar ni kan ta bort <li> med click.
+
+function whenLiClicked(event) {
+    event.target.parentNode.removeChild(event.target);
 }
 
 function createLi(text, color) {
     const li = document.createElement("li");
     li.innerText = text;
     li.style.backgroundColor = color;
+    li.style.cursor = "pointer";
+    li.className = "note";
+
+    li.addEventListener("click", whenLiClicked);
+
     return li;
 }
